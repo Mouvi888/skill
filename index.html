@@ -13,15 +13,6 @@
     <style>
         /* Общие стили */
         :root {
-            --bg-color: #f5f5f5; /* Светлый фон */
-            --text-color: #333; /* Темный текст */
-            --accent-color: #00cc66; /* Зеленый цвет */
-            --accent-hover: #00994d; /* Темно-зеленый цвет */
-            --card-bg: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
-            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Тень */
-        }
-
-        [data-theme="dark"] {
             --bg-color: #0a0a0a; /* Темный фон */
             --text-color: #fff; /* Белый текст */
             --accent-color: #00ff88; /* Ярко-зеленый цвет */
@@ -42,7 +33,6 @@
             color: var(--text-color); /* Текст */
             line-height: 1.6;
             overflow-x: hidden;
-            transition: background 0.3s ease, color 0.3s ease;
         }
 
         h1, h2, h3 {
@@ -72,7 +62,7 @@
             justify-content: center;
             z-index: 9999;
             opacity: 1;
-            transition: opacity 0.5s ease, background 0.3s ease;
+            transition: opacity 0.5s ease;
         }
 
         .preloader.hide {
@@ -112,21 +102,15 @@
 
         /* Шапка */
         header {
-            background: rgba(245, 245, 245, 0.9); /* Полупрозрачный светлый фон */
+            background: rgba(10, 10, 10, 0.8); /* Полупрозрачный черный фон */
             padding: 20px 0;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             backdrop-filter: blur(10px); /* Размытие фона */
-            transition: background 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        [data-theme="dark"] header {
-            background: rgba(10, 10, 10, 0.8); /* Полупрозрачный черный фон */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
 
         header h1 {
@@ -155,29 +139,6 @@
             margin: 0 15px;
             font-size: 1.1rem;
             transition: color 0.3s ease;
-        }
-
-        /* Кнопка переключения темы */
-        .theme-toggle {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: var(--accent-color);
-            color: #fff;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: var(--shadow);
-            transition: background 0.3s ease;
-        }
-
-        .theme-toggle:hover {
-            background: var(--accent-hover);
         }
 
         /* Герой-секция */
@@ -216,7 +177,7 @@
             display: inline-block;
             padding: 15px 30px;
             font-size: 1.2rem;
-            color: #fff;
+            color: #000;
             background: linear-gradient(45deg, var(--accent-color), var(--accent-hover));
             border: none;
             border-radius: 50px;
@@ -224,12 +185,12 @@
             position: relative;
             overflow: hidden;
             transition: all 0.4s ease;
-            box-shadow: var(--shadow);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
         }
 
         .hero .btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 204, 102, 0.5);
+            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.5);
         }
 
         .hero img {
@@ -237,7 +198,7 @@
             max-width: 100%;
             height: auto;
             border-radius: 10px;
-            box-shadow: var(--shadow);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
             animation: float 3s infinite ease-in-out;
         }
 
@@ -349,7 +310,7 @@
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 204, 102, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
         }
 
         /* Отзывы */
@@ -386,7 +347,7 @@
 
         .testimonial-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 204, 102, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
         }
 
         .testimonial-card p {
@@ -405,7 +366,7 @@
             bottom: 20px;
             right: 20px;
             background: var(--accent-color);
-            color: #fff;
+            color: #000;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -415,7 +376,7 @@
             font-size: 1.5rem;
             cursor: pointer;
             opacity: 0;
-            transition: opacity 0.3s ease, background 0.3s ease;
+            transition: opacity 0.3s ease;
         }
 
         .scroll-top.show {
@@ -428,18 +389,13 @@
 
         /* Подвал */
         footer {
-            background: rgba(245, 245, 245, 0.9);
+            background: rgba(10, 10, 10, 0.8);
             padding: 20px;
             text-align: center;
             font-size: 0.9rem;
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
-            transition: background 0.3s ease;
-        }
-
-        [data-theme="dark"] footer {
-            background: rgba(10, 10, 10, 0.8);
         }
 
         footer p {
@@ -500,11 +456,6 @@
             <a href="#contact">Контакты</a>
         </nav>
     </header>
-
-    <!-- Кнопка переключения темы -->
-    <div class="theme-toggle" id="themeToggle">
-        <i class="fas fa-moon"></i>
-    </div>
 
     <!-- Герой-секция -->
     <section class="hero">
@@ -610,28 +561,6 @@
             setTimeout(() => {
                 preloader.classList.add('hide');
             }, 1000); // 1 секунда
-        });
-    </script>
-
-    <!-- Скрипт для переключения темы -->
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-
-        // Проверяем, есть ли сохраненная тема в localStorage
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            body.setAttribute('data-theme', savedTheme);
-            themeToggle.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const isDark = body.getAttribute('data-theme') === 'dark';
-            body.setAttribute('data-theme', isDark ? 'light' : 'dark');
-            themeToggle.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
-
-            // Сохраняем выбранную тему в localStorage
-            localStorage.setItem('theme', isDark ? 'light' : 'dark');
         });
     </script>
 </body>
