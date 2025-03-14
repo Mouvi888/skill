@@ -618,10 +618,20 @@
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
 
+        // Проверяем, есть ли сохраненная тема в localStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.setAttribute('data-theme', savedTheme);
+            themeToggle.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        }
+
         themeToggle.addEventListener('click', () => {
             const isDark = body.getAttribute('data-theme') === 'dark';
             body.setAttribute('data-theme', isDark ? 'light' : 'dark');
             themeToggle.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+
+            // Сохраняем выбранную тему в localStorage
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
         });
     </script>
 </body>
