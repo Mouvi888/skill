@@ -434,6 +434,77 @@
             left: 0;
             z-index: 0;
         }
+/* Готовые сборки */
+.builds {
+    padding: 80px 20px;
+    text-align: center;
+    background: var(--card-bg);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+    margin: 40px 0;
+}
+
+.builds h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.build-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.build-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.build-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.build-card p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.build-card .btn {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #000;
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-hover));
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.build-card .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 136, 0.5);
+}
+
+@media (max-width: 768px) {
+    .builds h2 {
+        font-size: 2rem;
+    }
+
+    .build-grid {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
 </head>
 <body>
@@ -494,6 +565,61 @@
             </div>
         </div>
     </section>
+
+<!-- Готовые сборки -->
+<section id="builds" class="builds">
+    <h2>Готовые сборки</h2>
+    <div class="build-grid">
+        <!-- Сборка 1 -->
+        <div class="build-card">
+            <h3>GOLD</h3>
+            <p>COMPSHOP GOLD</p>
+            <p>145 000 р.</p>
+            <a href="#" class="btn">Подробнее</a>
+            <a href="#" class="btn">Заказать</a>
+        </div>
+        <!-- Сборка 2 -->
+        <div class="build-card">
+            <h3>HELIUM PLUS</h3>
+            <p>COMPSHOP HELIUM PLUS</p>
+            <p>137 000 р.</p>
+            <a href="#" class="btn">Подробнее</a>
+            <a href="#" class="btn">Заказать</a>
+        </div>
+        <!-- Сборка 3 -->
+        <div class="build-card">
+            <h3>SILVER PLUS</h3>
+            <p>COMPSHOP SILVER PLUS</p>
+            <p>130 000 р.</p>
+            <a href="#" class="btn">Подробнее</a>
+            <a href="#" class="btn">Заказать</a>
+        </div>
+        <!-- Сборка 4 -->
+        <div class="build-card">
+            <h3>PLATINUM PRO</h3>
+            <p>COMPSHOP PLATINUM PRO</p>
+            <p>160 000 р.</p>
+            <a href="#" class="btn">Подробнее</a>
+            <a href="#" class="btn">Заказать</a>
+        </div>
+        <!-- Сборка 5 -->
+        <div class="build-card">
+            <h3>TITAN X</h3>
+            <p>COMPSHOP TITAN X</p>
+            <p>175 000 р.</p>
+            <a href="#" class="btn">Подробнее</a>
+            <a href="#" class="btn">Заказать</a>
+        </div>
+        <!-- Сборка 6 -->
+        <div class="build-card">
+            <h3>NEON ULTRA</h3>
+            <p>COMPSHOP NEON ULTRA</p>
+            <p>150 000 р.</p>
+            <a href="#" class="btn">Подробнее</a>
+            <a href="#" class="btn">Заказать</a>
+        </div>
+    </div>
+</section>
 
     <!-- Подвал -->
     <footer id="contact">
